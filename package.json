@@ -1,0 +1,81 @@
+{
+  "name": "causton",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/preset-typescript": "^7.17.12",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/material": "^5.2.5",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.12",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "babel-loader": "^8.2.5",
+    "firebase": "^9.6.8",
+    "notistack": "^2.0.3",
+    "postcss": "^8.4.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-error-boundary": "^3.1.4",
+    "react-router-dom": "^6.2.2",
+    "reactfire": "^4.2.1",
+    "recoil": "^0.6.1",
+    "typescript": "^4.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.16.0",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
+    "@types/react-test-renderer": "^17.0.1",
+    "copy-webpack-plugin": "^10.0.0",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.10.0",
+    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-webpack-plugin": "^3.1.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.1.2",
+    "mini-css-extract-plugin": "^2.4.5",
+    "postcss-syntax": "^0.36.2",
+    "process": "^0.11.10",
+    "react-dev-utils": "^12.0.0",
+    "react-refresh": "^0.11.0",
+    "react-test-renderer": "^17.0.2",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dashboard": "^3.3.6",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "scripts": {
+    "start": "webpack-dashboard -- webpack serve",
+    "build": "webpack",
+    "lint:js": "eslint src/**/*.ts* --fix",
+    "lint": "yarn lint:js",
+    "firebase-serve": "firebase serve --only hosting",
+    "firebase-deploy": "firebase deploy",
+    "test": "jest",
+    "test:related": "jest --bail --findRelatedTests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "lint",
+      "test:related"
+    ]
+  }
+}
