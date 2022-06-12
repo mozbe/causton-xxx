@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import { createRoot } from 'react-dom/client';
 import { FirebaseAppProvider } from 'reactfire';
 import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
@@ -19,3 +20,18 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
+
+// const container = document.getElementById('root');
+// const root = createRoot(container!);
+
+// root.render(
+//   <React.StrictMode>
+//     <RecoilRoot>
+//       <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+//         <BrowserRouter>
+//           <App />
+//         </BrowserRouter>
+//       </FirebaseAppProvider>
+//     </RecoilRoot>
+//   </React.StrictMode>
+// );

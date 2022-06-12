@@ -44,17 +44,17 @@ function App() {
 
   return (
     <AuthProvider sdk={auth}>
-      <SnackbarProvider anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
-        <FirestoreProvider sdk={firestoreInstance}>
-          <ThemeProvider theme={theme}>
+      <FirestoreProvider sdk={firestoreInstance}>
+        <ThemeProvider theme={theme}>
+          <SnackbarProvider anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
             {globalStyles}
             <ErrorBoundary FallbackComponent={ErrorFallback}>
               {routeRoutes}
             </ErrorBoundary>
             <Sidebar active={sidebar.active} current={sidebar.current} />
-          </ThemeProvider>
-        </FirestoreProvider>
-      </SnackbarProvider>
+          </SnackbarProvider>
+        </ThemeProvider>
+      </FirestoreProvider>
     </AuthProvider>
   );
 }
