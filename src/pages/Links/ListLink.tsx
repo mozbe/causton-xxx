@@ -7,10 +7,11 @@ const ListLink = styled(Link)`
   display: flex;
   flex: 1 0 0;
   font-size: 11px;
-  text-decoration: none;
   height: inherit;
+  text-decoration: none;
 
-  svg {
+  .material-icons {
+    font-size: 14px;
     margin-left: -16px;
     margin-right: 5px;
     opacity: 0;
@@ -19,7 +20,7 @@ const ListLink = styled(Link)`
   }
 
   &:hover {
-    svg {
+    .material-icons {
       margin-left: 0;
       opacity: 1;
     }

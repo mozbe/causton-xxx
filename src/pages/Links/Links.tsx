@@ -17,7 +17,7 @@ const Links = () => {
   const firestore = useFirestore();
   const ref = collection(firestore, 'categories');
   const refQuery = query(ref, orderBy('col', 'asc'));
-  const { status, data } = useFirestoreCollectionData(refQuery, { idField: 'tag' });
+  const { status, data } = useFirestoreCollectionData(refQuery, { idField: 'id' });
 
   useEffect(() => {
     setLoading(true);

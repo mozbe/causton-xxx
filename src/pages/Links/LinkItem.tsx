@@ -7,6 +7,7 @@ import { sidebarState } from '@state/sidebar';
 import ConfirmationDialogue from '@components/ConfirmationDialogue';
 import ContextMenu from '@components/ContextMenu';
 import ListLink from './ListLink';
+import FontIcon from '@components/FontIcon';
 
 interface LinkItemProps {
   data: {
@@ -74,7 +75,7 @@ const LinkItem = ({ data, cat, isLast }: LinkItemProps) => {
       <ContextMenu anchor={anchorEl} open={contextOpen} onClick={handleItemClick} onClose={handleCloseContextMenu} />
       <ConfirmationDialogue open={dialogOpen} onClose={handleCloseDialog} onDelete={handleDelete} current={current} />
       <ListLink href={url} target="_blank" rel="noopener noreferrer">
-        <i className="fas fa-link" /> {name}
+        <FontIcon name="link" /> <span className="title">{name}</span>
       </ListLink>
     </ListItem>
   );

@@ -23,7 +23,7 @@ const LinksCat = ({ item }: LinksCatProps) => {
   const { name, tag } = item;
   const firestore = useFirestore();
   const ref = collection(firestore, 'links');
-  const refQuery = query(ref, where('cat', '==', tag), orderBy('name'));
+  const refQuery = query(ref, where('cat', '==', name.toLowerCase()), orderBy('name'));
   const { data: links } = useFirestoreCollectionData(refQuery, { idField: 'id' });
 
   if (!links || links?.length < 1) {
@@ -38,7 +38,7 @@ const LinksCat = ({ item }: LinksCatProps) => {
           action={<IconButton><MoreVertIcon /></IconButton>}
           titleTypographyProps={{ variant:'h5' }}
           sx={{ p: '10px 20px'}}
-          avatar={<Avatar><FontIcon icon={tag} /></Avatar>}
+          avatar={<Avatar><FontIcon name={tag} /></Avatar>}
         />
         <CardContent sx={{ paddingTop: 0, paddingBottom: '0 !important' }}>
           <List>
