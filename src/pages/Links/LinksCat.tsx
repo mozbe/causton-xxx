@@ -5,9 +5,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
-import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 /* *** */
 import FontIcon from '@components/FontIcon';
 import LinkItem from './LinkItem';
@@ -35,7 +33,6 @@ const LinksCat = ({ item }: LinksCatProps) => {
       <Card>
         <CardHeader
           title={name}
-          action={<IconButton><MoreVertIcon /></IconButton>}
           titleTypographyProps={{ variant:'h5' }}
           sx={{ p: '10px 20px'}}
           avatar={<Avatar><FontIcon name={tag} /></Avatar>}

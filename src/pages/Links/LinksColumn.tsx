@@ -9,7 +9,7 @@ interface ItemProps {
 
 const LinksColumn = ({ data }: { data: any}) => (
   <Grid item xs={12} md={3}>
-    {data.map((item: ItemProps) => {
+    {data?.map((item: ItemProps) => {
       const { tag } = item;
 
       return (
