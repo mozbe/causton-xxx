@@ -11,6 +11,6 @@ export function SignIn({ auth }: { auth: any}) {
   };
 
   return (
-    <Button onClick={() => signIn(auth)}>Log in</Button>
+    <Button onClick={() => signIn(auth)} size="small" variant="text">Log in</Button>
   );
 }

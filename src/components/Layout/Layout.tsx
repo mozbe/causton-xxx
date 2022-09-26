@@ -11,7 +11,7 @@ const Layout = () => {
   const loading = useRecoilValue(loadingState);
 
   return (
-    <Container sx={{ p: 10 }}>
+    <Container sx={{ paddingTop: '10%' }}>
       <BackgroundImage />
       <AppMenu />
       <LoadingProgress loading={loading} />

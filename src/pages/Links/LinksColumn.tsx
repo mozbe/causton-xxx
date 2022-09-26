@@ -7,16 +7,19 @@ interface ItemProps {
   tag: string;
 }
 
-const LinksColumn = ({ data }: { data: any}) => (
-  <Grid item xs={12} md={3}>
-    {data?.map((item: ItemProps) => {
-      const { tag } = item;
+const LinksColumn = ({ data }: { data: any}) => {
+  console.log('data', data);
+  return (
+    <Grid item xs={12} md={3}>
+      {data?.map((item: ItemProps) => {
+        const { tag } = item;
 
-      return (
-        <LinksCat item={item} key={tag} />
-      );
-    })}
-  </Grid>
-);
+        return (
+          <LinksCat item={item} key={tag} />
+        );
+      })}
+    </Grid>
+  );
+};
 
 export default LinksColumn;

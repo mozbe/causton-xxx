@@ -5,7 +5,7 @@ import { useFirestoreCollectionData, useFirestore } from 'reactfire';
 import { ErrorBoundary } from 'react-error-boundary';
 import Grid from '@mui/material/Grid';
 /* *** */
-import { groupBy } from '@constants/groupBy';
+import { groupBy } from '@helpers/groupBy';
 import { loadingState } from '@state/loading';
 import { withAuth } from '@components/Auth';
 import ErrorFallback from '@components/ErrorFallback';

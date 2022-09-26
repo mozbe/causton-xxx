@@ -1,6 +1,6 @@
 import { LinearProgress } from '@mui/material';
 
-const progressStyle = {
+const style = {
   position: 'absolute',
   top: '48px',
   width: '100%',
@@ -10,7 +10,7 @@ const progressStyle = {
 
 const LoadingProgress = ({ loading }: { loading: boolean }) => {
   return (
-    <LinearProgress sx={{...progressStyle, opacity: loading ? 1 : 0}} />
+    <LinearProgress sx={{...style, opacity: loading ? 1 : 0}} />
   );
 };
 

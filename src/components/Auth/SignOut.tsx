@@ -7,6 +7,6 @@ export function SignOut({ auth }: { auth: any}) {
     .then(() => navigate('/login'));
 
   return (
-    <Button onClick={() => signOut(auth)} variant="text">Log out</Button>
+    <Button onClick={() => signOut(auth)} variant="text" size="small">Log out</Button>
   );
 }

@@ -16,7 +16,7 @@ const ListLink = styled(Link)`
     margin-right: 5px;
     opacity: 0;
     pointer-events: none;
-    transition: all 300ms;
+    transition: margin-left 300ms, opacity 400ms;
   }
 
   &:hover {

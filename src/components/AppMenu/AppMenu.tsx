@@ -22,7 +22,7 @@ const AppMenu = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" color="primary">
+      <AppBar position="fixed" color="inherit">
         <Toolbar variant="dense">
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>...</Typography>
           {action}

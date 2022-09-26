@@ -23,7 +23,8 @@
     "paths": {
       "@components/*": ["./src/components/*"],
       "@config/*": ["./src/config/*"],
-      "@constants/*": ["./src/constants/*"],
+      "@constants/*": ["src/constants/*"],
+      "@helpers/*": ["src/helpers/*"],
       "@pages/*": ["./src/pages/*"],
       "@routes/*": ["./src/routes/*"],
       "@state/*": ["./src/state/*"],
