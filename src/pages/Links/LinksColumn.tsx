@@ -5,10 +5,10 @@ import LinksCat from './LinksCat';
 interface ItemProps {
   name: string;
   tag: string;
+  id: string;
 }
 
 const LinksColumn = ({ data }: { data: any}) => {
-  console.log('data', data);
   return (
     <Grid item xs={12} md={3}>
       {data?.map((item: ItemProps) => {

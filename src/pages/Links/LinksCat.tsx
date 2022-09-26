@@ -42,14 +42,15 @@ interface LinksCatProps {
   item: {
     name: string;
     tag: string;
+    id: string;
   }
 }
 
 const LinksCat = ({ item }: LinksCatProps) => {
-  const { name, tag } = item;
+  const { id, name, tag } = item;
   const firestore = useFirestore();
   const ref = collection(firestore, 'links');
-  const refQuery = query(ref, where('cat', '==', name.toLowerCase()), orderBy('name'));
+  const refQuery = query(ref, where('cat', '==', id), orderBy('name'));
   const { data: links } = useFirestoreCollectionData(refQuery, { idField: 'id' });
 
   if (!links || links?.length < 1) {
