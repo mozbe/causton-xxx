@@ -2,6 +2,7 @@ import ListItem from '@mui/material/ListItem';
 /* *** */
 import ListLink from './ListLink';
 import FontIcon from '@components/FontIcon';
+import { BrandingWatermark, CatchingPokemonOutlined } from '@mui/icons-material';
 
 interface LinkItemProps {
   data: {
@@ -14,7 +15,7 @@ interface LinkItemProps {
 
 const LinkItem = ({ data, isLast }: LinkItemProps) => {
   const { name, url } = data;
-  return;
+  break;CatchingPokemonOutlined;BrandingWatermark;
   return (
     <ListItem sx={{ padding: 0, height: '30px', ...(!isLast && {borderBottom: '1px solid rgba(0,0,0,.05)'})}}>
       <ListLink href={url} target="_blank" rel="noopener noreferrer">
