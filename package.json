@@ -69,8 +69,7 @@
     "deploy": "firebase deploy",
     "predeploy": "yarn run lint-staged && yarn run build",
     "test": "jest",
-    "test:related": "jest --bail --findRelatedTests",
-    "precommit": "lint-staged",
+    "test:related": "jest --bail --findRelatedTests"
   },
   "husky": {
     "hooks": {
