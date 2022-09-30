@@ -1,17 +1,19 @@
-const CopyPlugin = require('copy-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const openBrowser = require('react-dev-utils/openBrowser');
-const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const webpack = require('webpack');
+// const CopyPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
 const dev = process.env.NODE_ENV !== 'production';
-const assetSource = path.resolve(__dirname, 'src/assets');
-const assetDest = path.resolve(__dirname, 'build');
+// const assetSource = path.resolve(__dirname, 'src/assets');
+// const assetDest = path.resolve(__dirname, 'build');
+
+console.log('process', process.env);
 
 module.exports = {
   mode: dev ? 'development' : 'production',
@@ -29,7 +31,7 @@ module.exports = {
     plugins: [new TsconfigPathsPlugin()],
     extensions: ['.ts', '.tsx', '.js'],
   },
-  devtool: 'source-map',
+  devtool: dev ? 'source-map' : false,
   module: {
     rules: [
       {
@@ -66,18 +68,18 @@ module.exports = {
     dev && new ReactRefreshWebpackPlugin({
       overlay: false,
     }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'index.html'),
-    }),
     new MiniCssExtractPlugin({
       filename: dev
         ? 'styles.css'
         : 'styles.[contenthash:8].css',
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: assetSource, to: assetDest },
-      ],
+    // new CopyPlugin({
+    //   patterns: [
+    //     { from: '/public' },
+    //   ],
+    // }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public', 'index.html'),
     }),
     new DashboardPlugin(),
     new ESLintPlugin({

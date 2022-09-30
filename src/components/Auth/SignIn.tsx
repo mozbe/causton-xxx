@@ -7,7 +7,7 @@ export function SignIn({ auth }: { auth: any}) {
   const signIn = async (a: Auth) => {
     const provider = new GoogleAuthProvider();
 
-    await signInWithPopup(a, provider).then(() =>  navigate('/dashboard'));
+    await signInWithPopup(a, provider).then(() =>  navigate('/'));
   };
 
   return (

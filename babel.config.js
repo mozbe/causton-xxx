@@ -2,7 +2,7 @@ module.exports = (api) => {
   api.cache.using(() => process.env.NODE_ENV);
   const plugins = ['@emotion'];
 
-  if (!api.env('production')) {
+  if (!api.env('production') && !api.env('test')) {
     plugins.push('react-refresh/babel');
   }
 
