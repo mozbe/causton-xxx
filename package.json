@@ -69,11 +69,6 @@
     "predeploy": "yarn run build",
     "test": "jest",
     "test:related": "jest --bail --findRelatedTests",
-    "postinstall": "husky install"
-  },
-  "lint-staged": {
-    "*.tsx": [
-      "lint"
-    ]
+    "prepare": "husky install"
   }
 }
