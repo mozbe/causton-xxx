@@ -14,7 +14,6 @@ interface LinkItemProps {
 
 const LinkItem = ({ data, isLast }: LinkItemProps) => {
   const { name, url } = data;
-  console.log('foo');
 
   return (
     <ListItem sx={{ padding: 0, height: '30px', ...(!isLast && {borderBottom: '1px solid rgba(0,0,0,.05)'})}}>
