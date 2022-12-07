@@ -27,7 +27,8 @@ const BackgroundImage = () => {
   useEffect(() => {
     const image = images[Math.floor(Math.random() * images.length)];
     // const background = `https://cdn.mozbe.com/earth/${image}`;
-    const background = `/images/earth/${image}`;
+    // const background = `/images/earth/${image}`;
+    const background = `https://www.gstatic.com/prettyearth/assets/full/${image}`;
 
     setBackground(background);
   }, []);

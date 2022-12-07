@@ -22,8 +22,10 @@
     "react-dom": "^18.1.0",
     "react-error-boundary": "^3.1.4",
     "react-router-dom": "^6.2.2",
+    "react-spring": "^9.5.5",
     "reactfire": "^4.2.1",
     "recoil": "^0.7.3",
+    "rimraf": "^3.0.2",
     "typescript": "^4.8.4",
     "yarn": "^1.22.19"
   },
@@ -52,6 +54,7 @@
     "react-test-renderer": "^18.1.0",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "webpack": "^5.73.0",
+    "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^4.9.1",
     "webpack-dashboard": "^3.3.6",
     "webpack-dev-server": "^4.9.3"
@@ -59,10 +62,12 @@
   "scripts": {
     "start": "webpack-dashboard -- webpack serve",
     "build": "NODE_ENV=production webpack --mode=production",
+    "clean": "rimraf ./build",
+    "prebuild": "yarn clean",
     "lint": "eslint src/**/*.ts* --fix",
     "firebase-serve": "firebase serve --only hosting",
-    "deploy": "firebase deploy",
-    "predeploy": "yarn run build",
+    "deploy": "firebase deploy --only hosting:mozzzbe",
+    "predeploy": "yarn build",
     "prepare": "husky install"
   }
 }

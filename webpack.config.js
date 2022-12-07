@@ -5,15 +5,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const openBrowser = require('react-dev-utils/openBrowser');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require('webpack');
-// const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const dev = process.env.NODE_ENV !== 'production';
-// const assetSource = path.resolve(__dirname, 'src/assets');
-// const assetDest = path.resolve(__dirname, 'build');
-
-console.log('process', process.env);
 
 module.exports = {
   mode: dev ? 'development' : 'production',
@@ -73,13 +69,9 @@ module.exports = {
         ? 'styles.css'
         : 'styles.[contenthash:8].css',
     }),
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: '/public' },
-    //   ],
-    // }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public', 'index.html'),
+      template: path.join(__dirname, 'src', 'index.html'),
+      favicon: path.join(__dirname, 'src', 'favicon.png'),
     }),
     new DashboardPlugin(),
     new ESLintPlugin({
@@ -87,6 +79,9 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       process: 'process/browser',
+    }),
+    dev && new BundleAnalyzerPlugin({
+      openAnalyzer: false,
     }),
   ].filter(Boolean),
   devServer: {
